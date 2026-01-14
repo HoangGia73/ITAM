@@ -16,73 +16,101 @@ giúp theo dõi toàn bộ vòng đời thiết bị:
 <p>Hệ thống gồm 2 phần tách biệt rõ ràng:</p>
 
 <p><strong>🔧 Backend</strong></p>
-<p>🟢 Node.js + Express</p>
-<p>🗄️ PostgreSQL + Sequelize</p>
-<p>🔐 Xác thực JWT</p>
-<p>📩 Gửi email (Nodemailer – Gmail)</p>
-<p>📄 Sinh phiếu PDF (Puppeteer + Handlebars)</p>
+<ul>
+  <li>🟢 Node.js + Express</li>
+  <li>🗄️ PostgreSQL + Sequelize</li>
+  <li>🔐 Xác thực JWT</li>
+  <li>📩 Gửi email (Nodemailer – Gmail)</li>
+  <li>📄 Sinh phiếu PDF (Puppeteer + Handlebars)</li>
+</ul>
 
 <p><strong>🎨 Frontend</strong></p>
-<p>⚛️ React + Vite</p>
-<p>🧭 Giao diện quản lý thiết bị & luồng cấp phát / thu hồi</p>
-<p>📱 SPA, dễ mở rộng</p>
+<ul>
+  <li>⚛️ React + Vite</li>
+  <li>🧭 Giao diện quản lý thiết bị & luồng cấp phát / thu hồi</li>
+  <li>📱 SPA, dễ mở rộng</li>
+</ul>
 
 <hr>
 
 <h2>✨ 2. Tính năng chính</h2>
 
 <p><strong>🖥️ Quản lý thiết bị IT</strong></p>
-<p>Thêm / sửa / xoá</p>
-<p>Import Excel</p>
-<p>Sinh mã thiết bị tự động</p>
+<ul>
+  <li>Thêm / sửa / xoá</li>
+  <li>Import Excel</li>
+  <li>Sinh mã thiết bị tự động</li>
+</ul>
 
 <p><strong>🔄 Cấp phát & thu hồi tài sản</strong></p>
-<p>Gửi email thông báo</p>
-<p>Đính kèm phiếu bàn giao PDF</p>
+<ul>
+  <li>Gửi email thông báo</li>
+  <li>Đính kèm phiếu bàn giao PDF</li>
+</ul>
 
 <p><strong>📩 Xác nhận nhận tài sản</strong></p>
-<p>Qua link email</p>
-<p>⏱️ Token hết hạn sau 30 phút</p>
+<ul>
+  <li>Qua link email</li>
+  <li>⏱️ Token hết hạn sau 30 phút</li>
+</ul>
 
 <p><strong>📷 Tra cứu thiết bị bằng QR Code</strong></p>
-<p>Public</p>
-<p>Không cần đăng nhập</p>
+<ul>
+  <li>Public</li>
+  <li>Không cần đăng nhập</li>
+</ul>
 
 <p><strong>📊 Dashboard & thống kê</strong></p>
-<p>Tổng số thiết bị</p>
-<p>Trạng thái sử dụng</p>
-<p>Cảnh báo bảo hành / bảo trì</p>
+<ul>
+  <li>Tổng số thiết bị</li>
+  <li>Trạng thái sử dụng</li>
+  <li>Cảnh báo bảo hành / bảo trì</li>
+</ul>
 
 <p><strong>📑 Báo cáo & export Excel</strong></p>
-<p>Lịch sử cấp phát</p>
-<p>Báo cáo tổng hợp theo thời gian</p>
+<ul>
+  <li>Lịch sử cấp phát</li>
+  <li>Báo cáo tổng hợp theo thời gian</li>
+</ul>
 
 <hr>
 
 <h2>🏗️ 3. Kiến trúc hệ thống</h2>
 
 <p><strong>🌐 API Backend</strong></p>
-<p>Entry: backend/src/index.js</p>
-<p>REST API: /api/...</p>
+<ul>
+  <li>Entry: <code>backend/src/index.js</code></li>
+  <li>REST API: <code>/api/...</code></li>
+</ul>
 
 <p><strong>🗄️ Database</strong></p>
-<p>PostgreSQL</p>
-<p>Tự động sequelize.sync() khi khởi động</p>
+<ul>
+  <li>PostgreSQL</li>
+  <li>Tự động <code>sequelize.sync()</code> khi khởi động</li>
+</ul>
 
 <p><strong>📁 Lưu trữ file</strong></p>
-<p>backend/uploads</p>
-<p>Public qua /uploads/...</p>
+<ul>
+  <li><code>backend/uploads</code></li>
+  <li>Public qua <code>/uploads/...</code></li>
+</ul>
 
 <p><strong>📩 Email</strong></p>
-<p>Nodemailer (Gmail – App Password)</p>
+<ul>
+  <li>Nodemailer (Gmail – App Password)</li>
+</ul>
 
 <p><strong>📄 PDF</strong></p>
-<p>Puppeteer render template Handlebars</p>
-<p>backend/src/templates/*.hbs</p>
+<ul>
+  <li>Puppeteer render template Handlebars</li>
+  <li><code>backend/src/templates/*.hbs</code></li>
+</ul>
 
 <p><strong>🎨 Frontend</strong></p>
-<p>Vite SPA</p>
-<p>Thư mục frontend/</p>
+<ul>
+  <li>Vite SPA</li>
+  <li>Thư mục <code>frontend/</code></li>
+</ul>
 
 <hr>
 
@@ -99,7 +127,7 @@ npm install
 </pre>
 
 <p><strong>🔐 4.2 Cấu hình Backend</strong></p>
-<p>📄 Tạo file: backend/.env</p>
+<p>📄 Tạo file: <code>backend/.env</code></p>
 
 <pre>
 PORT=5000
@@ -124,17 +152,22 @@ HANDOVER_NAME=Bộ phận IT
 </pre>
 
 <p><strong>🔔 Lưu ý quan trọng</strong></p>
-<p>🔑 MAIL_PASS phải là Gmail App Password</p>
-<p>🧠 Có DATABASE_URL → hệ thống ưu tiên dùng</p>
-<p>👤 Admin mặc định khi chạy lần đầu:</p>
-<p>Email: admin@itam.local</p>
-<p>Password: admin123</p>
+<ul>
+  <li>🔑 <code>MAIL_PASS</code> phải là Gmail App Password</li>
+  <li>🧠 Có <code>DATABASE_URL</code> → hệ thống ưu tiên dùng</li>
+  <li>👤 Admin mặc định khi chạy lần đầu:
+    <ul>
+      <li>Email: <code>admin@itam.local</code></li>
+      <li>Password: <code>admin123</code></li>
+    </ul>
+  </li>
+</ul>
 
 <hr>
 
 <h2>🌐 4.3 Cấu hình Frontend (tuỳ chọn)</h2>
 
-<p>📄 frontend/.env</p>
+<p>📄 <code>frontend/.env</code></p>
 
 <pre>
 VITE_API_URL=http://localhost:5000/api
@@ -145,77 +178,95 @@ VITE_API_URL=http://localhost:5000/api
 <h2>▶️ 4.4 Chạy hệ thống</h2>
 
 <pre>
-# Backend
 cd backend
 npm run dev
 
-# Frontend
 cd ../frontend
 npm run dev
 </pre>
 
 <p><strong>🌍 Truy cập</strong></p>
-<p>Frontend: http://localhost:5173</p>
-<p>API: http://localhost:5000/api</p>
+<ul>
+  <li>Frontend: http://localhost:5173</li>
+  <li>API: http://localhost:5000/api</li>
+</ul>
 
 <hr>
 
 <h2>🔁 5. Các luồng nghiệp vụ chính</h2>
 
 <p><strong>🔐 Đăng nhập</strong></p>
-<p>POST /api/auth/login</p>
-<p>Trả về: token, user, alerts, modules</p>
+<ul>
+  <li>POST /api/auth/login</li>
+  <li>Trả về: token, user, alerts, modules</li>
+</ul>
 
 <p><strong>🖥️ Quản lý thiết bị</strong></p>
-<p>GET /api/devices</p>
-<p>POST /api/devices</p>
-<p>PUT /api/devices/:id</p>
-<p>DELETE /api/devices/:id</p>
-<p>POST /api/devices/import</p>
-<p>GET /api/devices/metrics/counts</p>
-<p>GET /api/devices/issues/alerts</p>
+<ul>
+  <li>GET /api/devices</li>
+  <li>POST /api/devices</li>
+  <li>PUT /api/devices/:id</li>
+  <li>DELETE /api/devices/:id</li>
+  <li>POST /api/devices/import</li>
+  <li>GET /api/devices/metrics/counts</li>
+  <li>GET /api/devices/issues/alerts</li>
+</ul>
 
 <p><strong>📦 Cấp phát tài sản</strong></p>
-<p>1. IT tạo phiếu → action=issue</p>
-<p>2. 📄 Sinh PDF + 📩 gửi email</p>
-<p>3. 👨‍💼 Nhân viên xác nhận qua link</p>
-<p>4. ✅ Assignment CONFIRMED, Device assigned</p>
+<ol>
+  <li>IT tạo phiếu → action=issue</li>
+  <li>📄 Sinh PDF + 📩 gửi email</li>
+  <li>👨‍💼 Nhân viên xác nhận qua link</li>
+  <li>✅ Assignment CONFIRMED, Device assigned</li>
+</ol>
 
 <p><strong>🔄 Thu hồi tài sản</strong></p>
-<p>Tạo phiếu action=return</p>
-<p>Device → available</p>
-<p>📩 Email thông báo</p>
+<ul>
+  <li>Tạo phiếu action=return</li>
+  <li>Device → available</li>
+  <li>📩 Email thông báo</li>
+</ul>
 
 <p><strong>⏱️ Token hết hạn</strong></p>
-<p>Hết hạn sau 30 phút</p>
-<p>Trạng thái PENDING_CONFIRM</p>
-<p>🔁 Có thể resend email xác nhận</p>
+<ul>
+  <li>Hết hạn sau 30 phút</li>
+  <li>Trạng thái PENDING_CONFIRM</li>
+  <li>🔁 Có thể resend email xác nhận</li>
+</ul>
 
 <p><strong>📷 Tra cứu QR (Public)</strong></p>
-<p>GET /api/devices/public/:code</p>
-<p>FE route: /qr/:code</p>
+<ul>
+  <li>GET /api/devices/public/:code</li>
+  <li>FE route: /qr/:code</li>
+</ul>
 
 <p><strong>📊 Báo cáo & Export</strong></p>
-<p>GET /api/assignments</p>
-<p>GET /api/assignments/export</p>
-<p>GET /api/reports/export</p>
+<ul>
+  <li>GET /api/assignments</li>
+  <li>GET /api/assignments/export</li>
+  <li>GET /api/reports/export</li>
+</ul>
 
 <hr>
 
 <h2>🧠 6. Kịch bản sử dụng tiêu biểu</h2>
 
-<p>🆕 Onboard thiết bị mới</p>
-<p>👤 Cấp phát cho nhân viên</p>
-<p>🔄 Thu hồi khi nghỉ việc / đổi thiết bị</p>
-<p>⚠️ Theo dõi bảo hành / bảo trì</p>
-<p>👥 Quản lý user (ADMIN)</p>
+<ul>
+  <li>🆕 Onboard thiết bị mới</li>
+  <li>👤 Cấp phát cho nhân viên</li>
+  <li>🔄 Thu hồi khi nghỉ việc / đổi thiết bị</li>
+  <li>⚠️ Theo dõi bảo hành / bảo trì</li>
+  <li>👥 Quản lý user (ADMIN)</li>
+</ul>
 
 <hr>
 
 <h2>⚠️ 7. Lưu ý kỹ thuật</h2>
 
-<p>⚙️ sequelize.sync() (không migration tay)</p>
-<p>📄 Puppeteer tải Chromium lần đầu (cần dung lượng)</p>
-<p>📁 uploads/ được public</p>
-<p>🚫 Không commit node_modules</p>
-<p>✅ Nên có .env.example</p>
+<ul>
+  <li>⚙️ Backend dùng <code>sequelize.sync()</code> (không migration tay)</li>
+  <li>📄 Puppeteer tải Chromium lần đầu (cần dung lượng)</li>
+  <li>📁 <code>uploads/</code> được public</li>
+  <li>🚫 Không commit <code>node_modules</code></li>
+  <li>✅ Nên có <code>.env.example</code></li>
+</ul>
