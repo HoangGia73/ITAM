@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 24px; color: #1b1b1b; }
+      .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #1b1b1b; padding-bottom: 12px; margin-bottom: 20px; }
+      .company { font-size: 14px; letter-spacing: 1px; text-transform: uppercase; }
+      .title { font-size: 20px; font-weight: 700; text-transform: uppercase; }
+      .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 6px 16px; margin-bottom: 12px; }
+      .section { margin-bottom: 16px; }
+      .section h3 { margin: 0 0 6px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; }
+      table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+      th, td { border: 1px solid #d9d9d9; padding: 8px; font-size: 13px; text-align: left; }
+      th { background: #f4f6fb; text-transform: uppercase; font-size: 12px; letter-spacing: 0.3px; }
+      .note { margin-top: 8px; font-size: 13px; }
+      .signatures { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; margin-top: 30px; }
+      .sign-box { margin-top: 40px; border-top: 1px dashed #999; padding-top: 8px; text-align: center; font-size: 13px; }
+      .muted { color: #666; font-size: 12px; margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="company">{{companyName}}</div>
+      <div class="title">{{documentTitle}}</div>
+    </div>
+
+    <div class="meta">
+      <div><strong>Ngày lập:</strong> {{formatDate generatedAt "DD/MM/YYYY"}}</div>
+      <div><strong>Thời gian thực hiện:</strong> {{issuedAtText}}</div>
+      <div><strong>Mã nhân viên:</strong> {{employee.code}}</div>
+      <div><strong>Phòng ban:</strong> {{employee.department}}</div>
+    </div>
+
+    <div class="section">
+      <h3>Thông tin bàn giao</h3>
+      <div><strong>Người bàn giao:</strong> {{employee.name}}</div>
+      <div><strong>Email:</strong> {{employee.email}}</div>
+      <div><strong>Tiếp nhận:</strong> {{handledBy}}</div>
+    </div>
+
+    <div class="section">
+      <h3>Thông tin thiết bị</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Tên thiết bị</th>
+            <th>Mã thiết bị</th>
+            <th>Phân loại</th>
+            <th>Trạng thái</th>
+            <th>Ghi chú</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{device.name}}</td>
+            <td>{{device.code}}</td>
+            <td>{{device.category}}</td>
+            <td>Đã thu hồi</td>
+            <td>{{#if assignment.notes}}{{assignment.notes}}{{else}}Không có ghi chú{{/if}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="note"><strong>Lý do thu hồi:</strong> {{#if assignment.returnReason}}{{assignment.returnReason}}{{else}}Không có lý do được cung cấp{{/if}}</p>
+      <p class="note"><strong>Ghi chú thêm:</strong> {{#if assignment.notes}}{{assignment.notes}}{{else}}Không có{{/if}}</p>
+    </div>
+
+    <div class="muted">
+      Vui lòng bàn giao đầy đủ thiết bị/phụ kiện. IT sẽ kiểm tra tình trạng và phản hồi nếu cần thêm thông tin.
+    </div>
+
+    <div class="signatures">
+      <div>
+        <strong>Đại diện IT</strong>
+        <div class="sign-box">Ký, ghi rõ họ tên</div>
+      </div>
+      <div>
+        <strong>Người bàn giao thiết bị</strong>
+        <div class="sign-box">Ký, ghi rõ họ tên</div>
+      </div>
+    </div>
+  </body>
+</html>
